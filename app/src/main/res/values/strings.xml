@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MediaScan</string>
+    <string name="main_dialog">Click the button below to force scan all media</string>
 </resources>
