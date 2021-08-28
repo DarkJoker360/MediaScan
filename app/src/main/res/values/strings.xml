@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">MediaScan</string>
     <string name="main_dialog">Click the button below to force scan all media</string>
+    <string name="btn_dialog">Scan</string>
+    <string name="scan_msg_int">Scanning internal storage</string>
+    <string name="err_msg_int">ERROR: Failed to scan internal storage</string>
+    <string name="scan_msg_ext">Scanning external storage</string>
+    <string name="err_msg_ext">ERROR: Failed to scan external storage</string>
+    <string name="scan_msg_otg">Scanning usb storage</string>
+    <string name="err_msg_otg">ERROR: Failed to scan usb storage</string>
 </resources>
