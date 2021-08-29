@@ -18,11 +18,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button button = (Button) findViewById(R.id.btn_scan);
+
         if (!isRooted()){
             TextView noroot_tv = findViewById(R.id.no_root);
             noroot_tv.setVisibility(View.VISIBLE);
         } else {
-            Button button = (Button) findViewById(R.id.btn_scan);
+            button.setVisibility(View.VISIBLE);
 
             if (button != null) {
                 button.setOnClickListener((View.OnClickListener) (it -> {
