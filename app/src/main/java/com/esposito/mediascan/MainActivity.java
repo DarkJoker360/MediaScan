@@ -25,29 +25,27 @@ public class MainActivity extends AppCompatActivity {
             Button button = (Button) findViewById(R.id.btn_scan);
 
             if (button != null) {
-                button.setOnClickListener((View.OnClickListener) (new View.OnClickListener() {
-                    public final void onClick(View it) {
-                        try {
-                            Toast.makeText((Context) MainActivity.this, R.string.scan_msg_int, Toast.LENGTH_LONG).show();
-                            Runtime.getRuntime().exec("su -c am broadcast -a " +
-                                    "android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard");
-                        } catch (IOException e) {
-                            Toast.makeText((Context) MainActivity.this, R.string.err_msg_int, Toast.LENGTH_LONG).show();
-                        }
-                        try {
-                            Toast.makeText((Context) MainActivity.this, R.string.scan_msg_ext, Toast.LENGTH_LONG).show();
-                            Runtime.getRuntime().exec("su -c am broadcast -a " +
-                                    "android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard1");
-                        } catch (IOException e) {
-                            Toast.makeText((Context) MainActivity.this, R.string.err_msg_ext, Toast.LENGTH_LONG).show();
-                        }
-                        try {
-                            Toast.makeText((Context) MainActivity.this, R.string.scan_msg_otg, Toast.LENGTH_LONG).show();
-                            Runtime.getRuntime().exec("su -c am broadcast -a " +
-                                    "android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///usb-otg");
-                        } catch (IOException e) {
-                            Toast.makeText((Context) MainActivity.this, R.string.err_msg_otg, Toast.LENGTH_LONG).show();
-                        }
+                button.setOnClickListener((View.OnClickListener) (it -> {
+                    try {
+                        Toast.makeText((Context) MainActivity.this, R.string.scan_msg_int, Toast.LENGTH_LONG).show();
+                        Runtime.getRuntime().exec("su -c am broadcast -a " +
+                                "android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard");
+                    } catch (IOException e) {
+                        Toast.makeText((Context) MainActivity.this, R.string.err_msg_int, Toast.LENGTH_LONG).show();
+                    }
+                    try {
+                        Toast.makeText((Context) MainActivity.this, R.string.scan_msg_ext, Toast.LENGTH_LONG).show();
+                        Runtime.getRuntime().exec("su -c am broadcast -a " +
+                                "android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard1");
+                    } catch (IOException e) {
+                        Toast.makeText((Context) MainActivity.this, R.string.err_msg_ext, Toast.LENGTH_LONG).show();
+                    }
+                    try {
+                        Toast.makeText((Context) MainActivity.this, R.string.scan_msg_otg, Toast.LENGTH_LONG).show();
+                        Runtime.getRuntime().exec("su -c am broadcast -a " +
+                                "android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///usb-otg");
+                    } catch (IOException e) {
+                        Toast.makeText((Context) MainActivity.this, R.string.err_msg_otg, Toast.LENGTH_LONG).show();
                     }
                 }));
             }
