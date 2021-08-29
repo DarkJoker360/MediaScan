@@ -8,4 +8,5 @@
     <string name="err_msg_ext">ERROR: Failed to scan external storage</string>
     <string name="scan_msg_otg">Scanning usb storage</string>
     <string name="err_msg_otg">ERROR: Failed to scan usb storage</string>
+    <string name="no_root_diag">You must be rooted to use this app, please root the device before using !</string>
 </resources>
