@@ -3,6 +3,7 @@ package com.esposito.mediascan;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.getWindow().setStatusBarColor(getResources().getColor(R.color.purple_500));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.purple_500)));
 
         Button button = (Button) findViewById(R.id.btn_scan);
 
@@ -24,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
             TextView noroot_tv = findViewById(R.id.no_root);
             noroot_tv.setVisibility(View.VISIBLE);
         } else {
+            TextView scanTxt = findViewById(R.id.textView);
+            scanTxt.setVisibility(View.VISIBLE);
             button.setVisibility(View.VISIBLE);
-
             if (button != null) {
                 button.setOnClickListener((View.OnClickListener) (it -> {
                     try {
